@@ -1,0 +1,25 @@
+{
+  "name": "Q1-project",
+  "version": "1.0.0",
+  "description": "",
+  "main": ".eslintrc.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "lint": "eslint ."
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ambaldwin21/Q1-Dashboard.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ambaldwin21/Q1-Dashboard/issues"
+  },
+  "homepage": "https://github.com/ambaldwin21/Q1-Dashboard#readme",
+  "devDependencies": {
+    "eslint": "^3.4.0",
+    "eslint-config-ryansobol": "^9.0.0"
+  }
+}
