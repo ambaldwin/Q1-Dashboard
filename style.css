@@ -1,3 +1,16 @@
+/*cards*/
 .card {
-  height: 200px;
+  height: 250px;
 }
+
+
+/*homepage structure*/
+body {
+    display: flex;
+    min-height: 100vh;
+    flex-direction: column;
+  }
+
+  main {
+    flex: 1 0 auto;
+  }
