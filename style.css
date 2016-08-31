@@ -16,6 +16,13 @@ body {
   }
 
 
+/*bottom nav*/
+
+.footer-text {
+  font-family: 'Righteous', cursive;
+}
+
+
 /*top nav*/
 .nav-image {
   height: 300px;

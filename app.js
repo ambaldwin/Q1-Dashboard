@@ -141,8 +141,9 @@ $(document).ready(function() {
             success: function(receivedBeer) {
                 // console.log("success:", receivedBeer);
                 var results = receivedBeer.data;
+                beerInfo = []
+
                 if (results !== undefined) {
-                    beerInfo = []
                     for (let i = 0; i < results.length; i++) {
                         const oneBeer = results[i];
 
