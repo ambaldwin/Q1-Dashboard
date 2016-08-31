@@ -49,7 +49,7 @@ $(document).ready(function() {
 
     var beerInfo = [];
 
-    var randomBeers = function(breweryID) {
+    var randomBeers = function() {
         var $modal = $('#modal1')
         if (!$('#modal1').html()) {
             $modal = $(`<div class="modal" id="modal1">`);
@@ -76,7 +76,7 @@ $(document).ready(function() {
             } // for loop end
         }
         else {
-          $modalContent.text("No dang beer")
+          $modalContent.text("No dang beer information")
           $modal.append($modalContent);
         }
 
@@ -156,7 +156,7 @@ $(document).ready(function() {
                         beerInfo.push(beer);
                     } //for loop end
                 } //end if statement
-                randomBeers(breweryID);
+                randomBeers();
             },
             error: function(err) {
                 console.log("Your search was not found for beer data", err);

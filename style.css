@@ -14,3 +14,17 @@ body {
   main {
     flex: 1 0 auto;
   }
+
+
+/*top nav*/
+.nav-image {
+  height: 300px;
+  width: 250px;
+  margin-left: 15px;
+  margin-top: 15px;
+}
+
+.brand-logo {
+  font-family: 'Righteous', cursive;
+  font-size: 100px;
+}
