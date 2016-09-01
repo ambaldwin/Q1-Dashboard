@@ -6,7 +6,7 @@
 }
 
 .grey.lighten-4 {
-    opacity: .85;
+  opacity: .85;
 }
 
 .card-content {
@@ -20,7 +20,7 @@
 }
 
 .card .card-content .card-title {
-    line-height: 25px !important;
+  line-height: 25px !important;
 }
 
 .card .card-content p {
@@ -33,16 +33,15 @@
 
 /*homepage structure*/
 body {
-    display: flex;
-    min-height: 100vh;
-    flex-direction: column;
-    background-image: url('beerfoam.jpg');
-  }
+  display: flex;
+  min-height: 100vh;
+  flex-direction: column;
+  background-image: url('beerfoam.jpg');
+}
 
 main {
   flex: 1 0 auto;
 }
-
 
 /*bottom nav*/
 
@@ -52,13 +51,6 @@ main {
 }
 
 /*top nav*/
-.nav-image {
-  height: 300px;
-  width: 250px;
-  margin-left: 15px;
-  margin-top: 15px;
-}
-
 .brand-logo {
   font-family: 'Righteous', cursive;
   font-size: 100px;
