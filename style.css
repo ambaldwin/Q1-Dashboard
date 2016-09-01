@@ -1,19 +1,32 @@
 /*cards*/
 .card {
-  height: 250px;
+  height: 240px;
+  position: relative;
+  align-content: center;
 }
 
+.card-content {
+  position: absolute;
+  bottom: 0;
+  align-content: center
+}
+
+.card-title {
+  position: relative;
+}
 
 /*homepage structure*/
 body {
     display: flex;
     min-height: 100vh;
     flex-direction: column;
+    background-image: url('Illustration10.jpg');
+
   }
 
-  main {
-    flex: 1 0 auto;
-  }
+main {
+  flex: 1 0 auto;
+}
 
 
 /*bottom nav*/
