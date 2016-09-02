@@ -52,7 +52,7 @@ $(document).ready(function() {
     let $modal = $('#modal1');
 
     if (!$('#modal1').html()) {
-      $modal = $(`<div class="modal" id="modal1">`);
+      $modal = $('<div class="modal" id="modal1">');
     }
     else {
       $modal.html('');
@@ -63,15 +63,14 @@ $(document).ready(function() {
     let length = beerInfo.length;
 
     if (length > 0) {
-      if (length > 5) {
-        length = 5;
+      if (length > 4) {
+        length = 4;
       }
       for (let i = 0; i < length; i++) {
         let beerBeer = beerInfo[i];
         let $modalHeader = $('<h4>').text(beerBeer.name);
         let $modalTextABV = $('<p>').text(`ABV: ${beerBeer.abv}`);
 
-        // const $modalText = $('<p>').text('beer.description');
         // console.log(beerBeer);
         $modalContent.append($modalHeader, $modalTextABV);
         $modal.append($modalContent);
@@ -105,10 +104,10 @@ $(document).ready(function() {
             id: oneBrewery.id,
             locality: oneBrewery.locality,
             name: oneBrewery.brewery.name,
-            open: oneBrewery.openToPublic,
-            website: oneBrewery.website
+            open: oneBrewery.openToPublic
           };
-            console.log(brewery);
+
+            // console.log(brewery);
           if (brewery.open === 'Y') {
             breweries.push(brewery);
           }
@@ -124,7 +123,7 @@ $(document).ready(function() {
         }
       },
       error: function(err) {
-        console.log("Your search was not found", err);
+        console.log('Your search was not found', err);
       }
     }); // ajax call done
   }; // requestData function end
@@ -152,7 +151,7 @@ $(document).ready(function() {
             let oneBeer = results[i];
 
             if (oneBeer.abv === undefined) {
-              oneBeer.abv = 'sorry, no ABV info for this beer!';
+              oneBeer.abv = 'sorry, no ABV info at this time!';
             }
             let beer = {
               abv: oneBeer.abv,
@@ -166,7 +165,7 @@ $(document).ready(function() {
         randomBeers(beerInfo);
       },
       error: function(err) {
-        console.log("Your search was not found for beer data.", err);
+        console.log('Your search was not found for beer data.', err);
       }
     }); // ajax call done
   }); // event listener end

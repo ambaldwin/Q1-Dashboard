@@ -11,6 +11,11 @@ module.exports = {
     'max-len': 'off',
     'prefer-template': 'off',
     'sort-keys': 'off',
-    'object-shorthand': 'off'
+    'object-shorthand': 'off',
+    'no-negated-condition': 'off',
+    'no-console': 'off',
+    'prefer-arrow-callback': 'off',
+    'no-undefined': 'off',
+    'strict': 'off'
   }
 };
