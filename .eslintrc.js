@@ -9,6 +9,8 @@ module.exports = {
     'no-use-before-define': 'off',
     'max-statements': 'off',
     'max-len': 'off',
-    'prefer-template': 'off'
+    'prefer-template': 'off',
+    'sort-keys': 'off',
+    'object-shorthand': 'off'
   }
 };

@@ -2,7 +2,7 @@ $(document).ready(function() {
     // console.log("I'm linked");
 
   $('.randomize-button').click(function() {
-      randomBreweries();
+    randomBreweries();
   });
 
   let breweries = [];
@@ -51,39 +51,40 @@ $(document).ready(function() {
   let randomBeers = function(beerInfo) {
     let $modal = $('#modal1');
 
-      if (!$('#modal1').html()) {
-        $modal = $(`<div class="modal" id="modal1">`);
-      }
+    if (!$('#modal1').html()) {
+      $modal = $(`<div class="modal" id="modal1">`);
+    }
     else {
-        $modal.html('')
-      }
+      $modal.html('');
+    }
 
     let $modalContent = $('<div class="modal-content">');
 
     let length = beerInfo.length;
-      if (length > 0) {
-        if (length > 2) {
-          length = 2;
-        }
-        for (let i = 0; i < length; i++) {
-          let beerBeer = beerInfo[i];
-          let $modalHeader = $('<h4>').text(beerBeer.name);
-          let $modalTextABV = $('<p>').text(`ABV: ${beerBeer.abv}`);
 
-          // const $modalText = $('<p>').text('beer.description');
-          // console.log(beerBeer);
-          $modalContent.append($modalHeader, $modalTextABV);
-          $modal.append($modalContent);
-        } // for loop end
+    if (length > 0) {
+      if (length > 5) {
+        length = 5;
       }
-      else {
-        $modalContent.text("Sorry, no beer information at this time!")
+      for (let i = 0; i < length; i++) {
+        let beerBeer = beerInfo[i];
+        let $modalHeader = $('<h4>').text(beerBeer.name);
+        let $modalTextABV = $('<p>').text(`ABV: ${beerBeer.abv}`);
+
+        // const $modalText = $('<p>').text('beer.description');
+        // console.log(beerBeer);
+        $modalContent.append($modalHeader, $modalTextABV);
         $modal.append($modalContent);
-      }
+      } // for loop end
+    }
+    else {
+      $modalContent.text('Sorry, no beer information at this time!');
+      $modal.append($modalContent);
+    }
 
-      $('main').append($modal)
-      $('#modal1').openModal();
-    }; // randomBeers function end
+    $('main').append($modal);
+    $('#modal1').openModal();
+  }; // randomBeers function end
 
   const requestData = function(page) {
     $.ajax({
@@ -91,7 +92,7 @@ $(document).ready(function() {
       url: `http://g-brewerydb.herokuapp.com/locations/?key=2be76c432d122aacf0bc16bc673a24c9&region=colorado&p=${page}`,
       dataType: 'json',
       success: function(received) {
-        // console.log("success:", data);
+        // console.log("success:", received);
         const results = received.data;
         const currentPage = received.currentPage;
         const numberOfPages = received.numberOfPages;
@@ -104,9 +105,10 @@ $(document).ready(function() {
             id: oneBrewery.id,
             locality: oneBrewery.locality,
             name: oneBrewery.brewery.name,
-            open: oneBrewery.openToPublic
+            open: oneBrewery.openToPublic,
+            website: oneBrewery.website
           };
-            // console.log(brewery);
+            console.log(brewery);
           if (brewery.open === 'Y') {
             breweries.push(brewery);
           }
@@ -132,22 +134,26 @@ $(document).ready(function() {
   $(document).on('click', '.card-action', function() {
     event.preventDefault();
 
-    var breweryID = $(this).closest('.card-action')[0].id
+    let breweryID = $(this).closest('.card-action')[0].id;
 
-    // console.log('clicked ID', breweryID);
+    console.log('clicked ID', breweryID);
     $.ajax({
       method: 'GET',
       url: `http://g-brewerydb.herokuapp.com/brewery/${breweryID}/beers/?key=2be76c432d122aacf0bc16bc673a24c9`,
       dataType: 'json',
       success: function(receivedBeer) {
       // console.log("success:", receivedBeer);
-      var results = receivedBeer.data;
+        let results = receivedBeer.data;
 
-      var beerInfo = []
+        let beerInfo = [];
 
         if (results !== undefined) {
           for (let i = 0; i < results.length; i++) {
             let oneBeer = results[i];
+
+            if (oneBeer.abv === undefined) {
+              oneBeer.abv = 'sorry, no ABV info for this beer!';
+            }
             let beer = {
               abv: oneBeer.abv,
               name: oneBeer.name
