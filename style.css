@@ -2,7 +2,7 @@
 .card {
   height: 240px;
   position: relative;
-  align-content: center;
+  align-items: center;
 }
 
 .grey.lighten-4 {
@@ -12,6 +12,7 @@
 .card-content {
   position: absolute;
   bottom: 0;
+  align-items: center;
 }
 
 .card-title {
@@ -48,10 +49,21 @@ main {
 .footer-text {
   font-family: 'Righteous', cursive;
   font-size: 30px;
+  letter-spacing: 2px;
+}
+
+.randomize-button {
+  margin-top: 10px;
 }
 
 /*top nav*/
 .brand-logo {
   font-family: 'Righteous', cursive;
-  font-size: 100px;
+  letter-spacing: 3px;
+}
+
+/*top nav*/
+#preloader {
+  margin-top: 20%;
+  align-self: center
 }
