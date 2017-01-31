@@ -2,7 +2,7 @@
 
 Randomize Brews is a front-end app where users can search the entire selection of Colorado's breweries and then display 6 random locations and the associated brews for each at the click of a button.
 
-**Note:** I no longer pay monthly for the API, so unfortunately the application does not work anymore, but please see the video walkthrough below.
+**Note:** I no longer pay monthly for the API, so unfortunately the application does not work anymore.
 
 **Check it out here:** http://baldwin-q1project.surge.sh/
 
